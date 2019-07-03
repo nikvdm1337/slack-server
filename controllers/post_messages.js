@@ -1,11 +1,9 @@
 const db_message = require('../models/message')
 
 module.exports = (req, res) => {
-    db_message.create({
-        author: "Nikola",
-        body: "Hey Mongo!",
-        date: "03.07.2019"
-    }).then ((data) => {
+
+    console.log(req.body)
+    db_message.create(req.body).then ((data) => {
         res.send(data)
     }).catch((err) => {
         res.send(err)
