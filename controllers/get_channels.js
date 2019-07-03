@@ -1,7 +1,7 @@
-const db_message = require('../models/message')
+const db_channel = require('../models/channel')
 
 module.exports = (req, res) => {
-    db_message.find({}).then ((data) => {
+    db_channel.find({}).then ((data) => {
         res.send(data)
     }).catch((err) => {
         res.send(err)
