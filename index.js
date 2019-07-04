@@ -18,7 +18,10 @@ app.post('/api/messages', require('./controllers/post_messages'))
 app.get('/api/channels', require('./controllers/get_channels'))
 app.post('/api/channels', require('./controllers/post_channels'))
 
+app.get('/api/users', require('./controllers/get_user'))
+
 app.post('/api/signup', require('./controllers/post_user'))
+app.post('/api/login', require('./controllers/login'))
 
 app.listen(process.env.PORT, (err) => {
     if (err) {
