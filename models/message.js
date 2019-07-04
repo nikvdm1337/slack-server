@@ -1,4 +1,5 @@
 const db = require('../db')
+const mongoose = require('mongoose')
 
 const db_message = db.model('message', {
     author: {
@@ -13,6 +14,11 @@ const db_message = db.model('message', {
         type: String,
         required: [true, 'You cannot send an empty message.']
     },
+    channel: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "channel",
+        required: [true, 'You cannot send an empty message.'],
+    }
 })
 
 module.exports = db_message
